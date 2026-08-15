@@ -48,9 +48,9 @@
 
 /* ============================ BASE ============================ */
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
+html{-webkit-text-size-adjust:100%;overflow-x:hidden}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);
-  font-size:15px;line-height:1.5;padding:0 0 56px;overflow-x:hidden}
+  font-size:15px;line-height:1.5;padding:0 0 56px;overflow-x:hidden;max-width:100%}
 .wrap{max-width:1120px;margin:0 auto;padding:clamp(16px,3.5vw,28px) clamp(10px,3vw,16px) 0}
 img,svg{max-width:100%}
 h1,h2,h3{font-family:var(--font-display);font-weight:600;letter-spacing:-.01em;text-wrap:balance}
@@ -74,7 +74,7 @@ h1{font-size:clamp(24px,3.4vw,34px);margin:0}
 .tip:hover,.tip:focus,.tip.open{color:var(--accent-ink);background:var(--accent);border-color:var(--accent);outline:none}
 .tipbox{position:absolute;bottom:calc(100% + 11px);left:50%;
   transform:translateX(calc(-50% + var(--sx,0px))) translateY(5px);
-  width:max-content;max-width:min(290px, calc(100vw - 28px));
+  width:max-content;max-width:min(280px, calc(100vw - 24px));overflow-wrap:anywhere;
   background:var(--tip-bg);color:var(--tip-ink);padding:13px 15px;border-radius:12px;text-align:left;
   font:400 13px/1.6 var(--font-sans);letter-spacing:.005em;
   box-shadow:0 14px 38px rgba(0,0,0,.32);opacity:0;pointer-events:none;
@@ -322,33 +322,35 @@ textarea:focus{outline:none;border-color:var(--ring);box-shadow:0 0 0 3px color-
   max-height:92vh;overflow:auto;box-shadow:var(--shadow);position:relative}
 .report-toolbar{position:sticky;top:0;z-index:2;display:flex;gap:8px;justify-content:flex-end;
   padding:12px 16px;background:#fff;border-bottom:1px solid #eee}
-#reportBody{padding:6px 30px 30px}
+#reportBody{padding:6px clamp(14px,4vw,30px) 30px}
 
-.report{color:#111;font-family:Georgia,"Times New Roman",serif}
-.report .r-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;
+.report{color:#111;font-family:Georgia,"Times New Roman",serif;overflow-wrap:anywhere}
+.report .r-head{display:flex;justify-content:space-between;align-items:flex-end;gap:8px 16px;flex-wrap:wrap;
   border-bottom:3px solid #8a5a12;padding-bottom:10px}
-.report .r-title{font-size:25px;font-weight:700;letter-spacing:.5px;margin:0;line-height:1.1}
+.report .r-title{font-size:clamp(19px,5.5vw,25px);font-weight:700;letter-spacing:.5px;margin:0;line-height:1.1}
 .report .r-accent{color:#8a5a12}
-.report .r-sub{font-family:Arial,Helvetica,sans-serif;font-size:11.5px;color:#555;text-align:right;line-height:1.5}
+.report .r-sub{font-family:Arial,Helvetica,sans-serif;font-size:11.5px;color:#555;line-height:1.5}
 .report h3{font-family:Arial,Helvetica,sans-serif;font-size:11.5px;text-transform:uppercase;
   letter-spacing:.1em;color:#8a5a12;margin:22px 0 8px;border-bottom:1px solid #e2e2e2;padding-bottom:4px}
-.report .grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 28px;
+.report .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0 28px;
   font-family:Arial,Helvetica,sans-serif;font-size:13px}
 .report .kv{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px dotted #d8d8d8}
-.report .kv .k{color:#555} .report .kv .v{font-weight:700;font-variant-numeric:tabular-nums;text-align:right}
+.report .kv .k{color:#555;flex:none} .report .kv .v{font-weight:700;font-variant-numeric:tabular-nums;text-align:right;min-width:0}
 .report .termo-box{margin-top:12px;background:#f6efe1;border:1px solid #e3d5b6;border-radius:10px;
-  padding:12px 18px;display:flex;justify-content:space-between;align-items:center;
+  padding:12px 18px;display:flex;justify-content:space-between;align-items:center;gap:4px 12px;flex-wrap:wrap;
   font-family:Arial,Helvetica,sans-serif}
 .report .termo-box .lbl{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#8a5a12;font-weight:700}
-.report .termo-box .val{font-size:23px;font-weight:800;font-variant-numeric:tabular-nums}
+.report .termo-box .val{font-size:clamp(19px,5vw,23px);font-weight:800;font-variant-numeric:tabular-nums}
 .report .op-line{display:flex;align-items:center;gap:10px;font-family:Arial,Helvetica,sans-serif;
   font-size:13px;padding:6px 0;border-bottom:1px dotted #d8d8d8}
-.report .op-line .s{width:16px;text-align:center;font-weight:800;color:#999}
+.report .op-line .s{width:16px;text-align:center;font-weight:800;color:#999;flex:none}
+.report .op-line>span:not(.s):not(.v){flex:1;min-width:0}
 .report .op-line.add .s{color:#1a7f43} .report .op-line.sub .s{color:#b8352b}
-.report .op-line .v{margin-left:auto;font-weight:700;font-variant-numeric:tabular-nums}
+.report .op-line .v{margin-left:auto;font-weight:700;font-variant-numeric:tabular-nums;flex:none;text-align:right}
 .report .op-line.tot{border-top:2px solid #8a5a12;border-bottom:none;margin-top:4px;padding-top:9px}
 .report .op-line.tot .v,.report .op-line.tot span{font-weight:800;font-size:15px}
-.report table{width:100%;border-collapse:collapse;font-family:Arial,Helvetica,sans-serif;font-size:13px;margin-top:4px}
+.report .tblwrap{overflow-x:auto;margin-top:4px}
+.report table{width:100%;border-collapse:collapse;font-family:Arial,Helvetica,sans-serif;font-size:13px}
 .report th{background:#efe7d6;text-align:left;padding:8px 12px;font-size:11px;text-transform:uppercase;
   letter-spacing:.06em;color:#6a4a12;border:1px solid #e3d5b6}
 .report td{padding:7px 12px;border:1px solid #e8e2d3;font-variant-numeric:tabular-nums}
@@ -1016,6 +1018,7 @@ document.querySelectorAll('.tip').forEach(tip=>{
 });
 document.addEventListener('click',e=>{ if(!e.target.closest('.tip')) document.querySelectorAll('.tip.open').forEach(t=>t.classList.remove('open')); });
 window.addEventListener('resize',()=>document.querySelectorAll('.tip.open').forEach(positionTip));
+window.addEventListener('scroll',()=>document.querySelectorAll('.tip.open').forEach(positionTip),{passive:true});
 
 // tema
 $('btTema').addEventListener('click',()=>{
@@ -1061,7 +1064,7 @@ function montarRelatorio(){
     <h3>Operação sobre a pena — ${opTitulo}</h3>
     ${opLines||'<div class="op-line"><span>—</span></div>'}
     <h3>Progressão da pena</h3>
-    <table><thead><tr><th>Fração</th><th>Tempo (a · m · d)</th><th>Atingida em</th></tr></thead><tbody>${rows}</tbody></table>
+    <div class="tblwrap"><table><thead><tr><th>Fração</th><th>Tempo (a · m · d)</th><th>Atingida em</th></tr></thead><tbody>${rows}</tbody></table></div>
     <div class="r-foot">${rodape}<br>Ferramenta de apoio ao cálculo penal — confira sempre o cálculo oficial da execução penal.</div>
   </div>`;
 }
