@@ -369,6 +369,81 @@ textarea:focus{outline:none;border-color:var(--ring);box-shadow:0 0 0 3px color-
   #reportBody{padding:0!important}
   #mdReport.show *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
+
+/* ============================ PARCELAS (ADICIONAR/SUBTRAIR) ============================ */
+.parc-row{position:relative;background:var(--surface-2);border:1px solid var(--border);border-radius:12px;
+  padding:18px 12px 12px;margin-bottom:12px;display:flex;flex-wrap:wrap;gap:12px 16px;align-items:flex-start}
+.parc-row .parc-num{position:absolute;top:-10px;left:14px;background:var(--accent);color:var(--accent-ink);
+  font:800 10px/1 var(--font-sans);letter-spacing:.05em;text-transform:uppercase;padding:4px 9px;border-radius:999px}
+.parc-del{position:absolute;top:9px;right:9px;border:1px solid var(--border-strong);background:var(--surface);
+  color:var(--faint);width:26px;height:26px;border-radius:7px;cursor:pointer;font-size:13px;line-height:1;
+  display:flex;align-items:center;justify-content:center;transition:all .12s}
+.parc-del:hover{border-color:var(--sub);color:var(--sub)}
+.parc-grp{min-width:120px}
+.parc-grp .field-label{margin-bottom:7px}
+.parc-fval,.parc-pval{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.parc-fval select{background:var(--surface);color:var(--ink);border:1px solid var(--border-strong);
+  border-radius:9px;padding:9px 10px;font:600 15px/1 var(--font-sans);cursor:pointer}
+.parc-fval .cust{display:flex;align-items:center;gap:5px;font:700 15px/1 var(--font-mono);color:var(--muted)}
+.parc-fval .cust input{width:52px;text-align:center;padding:8px 4px;font-size:14px}
+.parc-pval{font-weight:700}
+.parc-pval input{width:96px;text-align:center}
+.parc-out{flex-basis:100%;border-top:1px dashed var(--border);padding-top:9px;
+  font:600 13px/1.5 var(--font-mono);color:var(--muted);overflow-wrap:anywhere}
+.parc-out b{color:var(--accent);font-weight:800}
+.parc-out .dt{color:var(--ink);font-weight:800}
+.parc-row .seg button{padding:8px 11px;font-size:12.5px}
+
+/* ============================ CONDENAÇÕES ============================ */
+.cond-card{position:relative;background:var(--surface-2);border:1px solid var(--border);border-radius:12px;
+  padding:20px 14px 14px;margin-bottom:14px}
+.cond-num{position:absolute;top:-10px;left:14px;background:var(--accent);color:var(--accent-ink);
+  font:800 10px/1 var(--font-sans);letter-spacing:.05em;text-transform:uppercase;padding:5px 10px;border-radius:999px}
+.cond-del{position:absolute;top:10px;right:10px;border:1px solid var(--border-strong);background:var(--surface);
+  color:var(--faint);width:26px;height:26px;border-radius:7px;cursor:pointer;font-size:13px;line-height:1;
+  display:flex;align-items:center;justify-content:center;transition:all .12s}
+.cond-del:hover{border-color:var(--sub);color:var(--sub)}
+.cond-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(158px,1fr));gap:15px 16px}
+.amd3{display:flex;gap:7px}
+.amd3 .u{flex:1;min-width:0}
+.amd3 .u input{padding:9px 5px;font-size:15px}
+.amd3 .u small{display:block;text-align:center;font-size:10px;color:var(--faint);margin-top:3px;
+  text-transform:uppercase;letter-spacing:.05em}
+.frac-ctl{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.frac-ctl select{flex:1;min-width:92px;background:var(--surface);color:var(--ink);border:1px solid var(--border-strong);
+  border-radius:9px;padding:9px 8px;font:600 14px/1 var(--font-sans);cursor:pointer}
+.frac-ctl .frac-cust,.frac-ctl .frac-pct{display:flex;align-items:center;gap:5px;font:700 15px/1 var(--font-mono);color:var(--muted)}
+.frac-ctl input{width:50px;text-align:center;padding:8px 4px;font-size:14px}
+.frac-ctl[hidden],.frac-cust[hidden],.frac-pct[hidden]{display:none!important}
+
+/* ============================ DADOS GERAIS ============================ */
+.gen-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px 18px}
+.gen-grid .fg{min-width:0}
+
+/* ============================ MÓDULOS (RESULTADO) ============================ */
+.modcard{scroll-margin-top:16px}
+.modcard .mod-base{font-size:14px;color:var(--muted);margin-bottom:6px}
+.modcard .mod-base b{color:var(--ink);font-family:var(--font-mono)}
+.formula-note{font-size:12.5px;color:var(--faint);font-style:italic;margin:2px 0 12px}
+.flines{display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
+.fline{font:600 13px/1.55 var(--font-mono);color:var(--muted);overflow-wrap:anywhere;
+  background:var(--surface-2);border:1px solid var(--border);border-radius:9px;padding:10px 12px}
+.fline .fl-tag{color:var(--accent);font-weight:800}
+.fline b{color:var(--ink);font-weight:800}
+.fline.empty{font-style:italic;color:var(--faint);font-weight:500;font-family:var(--font-sans)}
+.req-total{display:flex;justify-content:space-between;gap:10px;align-items:baseline;font-size:14px;
+  padding:10px 0;border-top:1px dashed var(--border);margin-bottom:14px}
+.req-total .k{color:var(--muted)}
+.req-total .v{font-family:var(--font-mono);font-weight:800;color:var(--accent);text-align:right}
+.reqdate{background:var(--disp-bg);border:1px solid var(--disp-line);border-radius:12px;padding:14px 16px;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.reqdate .lbl{font:600 12px/1.3 var(--font-sans);text-transform:uppercase;letter-spacing:.06em;color:var(--disp-dim)}
+.reqdate .val{font-family:var(--font-mono);font-weight:800;color:var(--disp-ink);font-size:clamp(21px,4vw,28px);
+  text-shadow:0 0 14px color-mix(in srgb,var(--disp-ink) 40%,transparent)}
+.mini-extrato{margin-top:12px;border-top:1px dashed var(--border);padding-top:10px;
+  font:500 12.5px/1.6 var(--font-mono);color:var(--muted)}
+.mini-extrato .l{display:flex;justify-content:space-between;gap:10px}
+.mini-extrato .l b{color:var(--ink)}
 </style>
 </head>
 <body>
@@ -393,246 +468,97 @@ textarea:focus{outline:none;border-color:var(--ring);box-shadow:0 0 0 3px color-
       </svg>
       <div>
         <h1>Calculadora de Penas</h1>
-        <p class="sub">Cálculo penal na convenção 30/360 — pena, remição, término e progressão.</p>
+        <p class="sub">Requisitos temporais — progressão de regime, livramento condicional e término de pena.</p>
       </div>
     </div>
     <div class="topbar">
       <button class="iconbtn" id="btTema" title="Alternar tema claro/escuro" aria-label="Alternar tema">◐</button>
-      <button class="iconbtn wa" id="btWhats" title="Enviar resumo por WhatsApp" aria-label="Enviar por WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></button>
-      <button class="iconbtn" id="btImprimir" title="Imprimir relatório" aria-label="Imprimir">🖨</button>
       <button class="iconbtn" id="btSobre" title="Sobre o programa" aria-label="Sobre">?</button>
     </div>
   </header>
 
-  <!-- ============ PENA BASE (compartilhada) ============ -->
+  <!-- ============ CONDENAÇÕES ============ -->
   <div class="card hero" style="margin-bottom:20px">
     <div class="card-head">
-      <h2>Pena base</h2>
-      <span class="tip" tabindex="0" aria-label="Pena base: tempo total da condenação. 1 mês = 30 dias, 1 ano = 360 dias."><span class="tipbox"><strong>Pena base</strong>Tempo total da condenação. Convenção penal: <b>1&nbsp;mês&nbsp;=&nbsp;30&nbsp;dias</b> e <b>1&nbsp;ano&nbsp;=&nbsp;360&nbsp;dias</b>.</span></span>
-      <span class="badge">base de todos os cálculos</span>
+      <h2>Condenações</h2>
+      <span class="tip" tabindex="0" aria-label="Lista de condenações. Cada uma com pena imposta, pena cumprida e frações."><span class="tipbox"><strong>Condenações</strong>Cada condenação entra com sua <b>pena imposta</b>, o <b>tempo já cumprido</b> e as <b>frações</b> de progressão e de livramento. Convenção: <b>1&nbsp;mês&nbsp;=&nbsp;30&nbsp;dias</b>, <b>1&nbsp;ano&nbsp;=&nbsp;360&nbsp;dias</b>.</span></span>
+      <span class="badge">base dos cálculos</span>
     </div>
 
-    <div class="led-row">
-      <div class="led-field">
-        <div class="cap">Anos</div>
-        <div class="led-input">
-          <input type="number" id="pbAno" min="0" max="1000" value="6" aria-label="anos">
-          <div class="steppers"><button type="button" data-step="pbAno" data-dir="1" aria-label="mais um ano">▲</button><button type="button" data-step="pbAno" data-dir="-1" aria-label="menos um ano">▼</button></div>
-        </div>
-      </div>
-      <div class="led-field">
-        <div class="cap">Meses</div>
-        <div class="led-input">
-          <input type="number" id="pbMes" min="0" max="11" value="0" aria-label="meses">
-          <div class="steppers"><button type="button" data-step="pbMes" data-dir="1" aria-label="mais um mês">▲</button><button type="button" data-step="pbMes" data-dir="-1" aria-label="menos um mês">▼</button></div>
-        </div>
-      </div>
-      <div class="led-field">
-        <div class="cap">Dias</div>
-        <div class="led-input">
-          <input type="number" id="pbDia" min="0" max="29" value="0" aria-label="dias">
-          <div class="steppers"><button type="button" data-step="pbDia" data-dir="1" aria-label="mais um dia">▲</button><button type="button" data-step="pbDia" data-dir="-1" aria-label="menos um dia">▼</button></div>
-        </div>
-      </div>
-    </div>
-    <div class="led-readout">total:&nbsp;<b id="pbDias">2.160 dias</b></div>
+    <div id="condList"></div>
 
-    <div class="memrow">
-      <div class="memlabel">Memória
-        <span class="tip" tabindex="0" aria-label="Memória: guarda um valor para reutilizar."><span class="tipbox"><strong>Memória</strong><b>M+</b> soma a pena atual à memória · <b>M−</b> subtrai · <b>MR</b> traz a memória para a pena · <b>MC</b> limpa. Útil para somar várias penas.</span></span>
-      </div>
-      <span class="memval empty" id="memVal">vazia</span>
-      <div class="membtns">
-        <span class="memitem">
-          <button type="button" id="btMR" aria-label="Recuperar memória para a pena">MR</button>
-          <span class="tip" tabindex="0" aria-label="MR: recuperar memória"><span class="tipbox"><strong>MR · Recuperar</strong>Traz o valor guardado na memória de volta para os painéis da pena.</span></span>
-        </span>
-        <span class="memitem">
-          <button type="button" id="btMmais" aria-label="Somar pena atual à memória">M+</button>
-          <span class="tip" tabindex="0" aria-label="M+: somar à memória"><span class="tipbox"><strong>M+ · Somar</strong>Soma a pena atual (anos/meses/dias) ao valor guardado na memória.</span></span>
-        </span>
-        <span class="memitem">
-          <button type="button" id="btMmenos" aria-label="Subtrair pena atual da memória">M−</button>
-          <span class="tip" tabindex="0" aria-label="M−: subtrair da memória"><span class="tipbox"><strong>M− · Subtrair</strong>Subtrai a pena atual do valor guardado na memória.</span></span>
-        </span>
-        <span class="memitem">
-          <button type="button" id="btMC" class="danger" aria-label="Limpar memória">MC</button>
-          <span class="tip" tabindex="0" aria-label="MC: limpar memória"><span class="tipbox"><strong>MC · Limpar</strong>Zera a memória, apagando o valor guardado.</span></span>
-        </span>
-      </div>
-    </div>
-
-    <hr style="border:none;border-top:1px solid var(--border);margin:18px 0 16px">
-
-    <div class="controls-row" style="gap:14px 22px">
-      <div style="flex:0 0 auto">
-        <div class="field-label">Dias remidos
-          <span class="tip" tabindex="0" aria-label="Dias remidos: abatidos da pena por trabalho ou estudo."><span class="tipbox"><strong>Dias remidos</strong>Dias abatidos da pena por <b>trabalho ou estudo</b> (remição, art.&nbsp;126 da LEP). Entram no cálculo quando maiores que zero.</span></span>
-        </div>
-        <input type="number" id="rem" min="0" max="9999" value="0" aria-label="dias remidos" style="max-width:160px">
-      </div>
-      <div style="flex:1;min-width:220px;padding-bottom:10px">
-        <label class="switch">
-          <input type="checkbox" id="modoRem">
-          <span class="track"></span>
-          <span>Descontar remidos <b>antes</b> da fração</span>
-          <span class="tip" tabindex="0" aria-label="Remição antes ou depois de calcular a fração."><span class="tipbox"><strong>Remição: antes × depois</strong><b>Ligado:</b> a fração incide sobre a pena já com a remição descontada.<br><b>Desligado:</b> a fração incide sobre a pena cheia e a remição é abatida ao final.</span></span>
-        </label>
-      </div>
+    <div style="margin-top:2px">
+      <button class="btn" id="condAdd">＋ Incluir condenação</button>
     </div>
   </div>
 
-  <div class="grid two">
-
-    <!-- ============ CARD A: OPERAR SOBRE A PENA ============ -->
-    <div class="card">
-      <div class="card-head">
-        <h2>Adicionar ou subtrair tempo</h2>
-        <span class="tip" tabindex="0" aria-label="Aplica uma fração ou porcentagem da pena, somando ou subtraindo."><span class="tipbox"><strong>Operação sobre a pena</strong>Aplica uma <b>fração</b> (ex.: 1/6, 2/3) ou <b>porcentagem</b> da pena, somando (acréscimo) ou subtraindo (redução) do total.</span></span>
-      </div>
-
-      <div class="controls-row" style="gap:14px 18px">
-        <div>
-          <div class="field-label">Tipo de parcela</div>
-          <div class="seg" id="segTipo">
-            <button data-tipo="fracao" aria-pressed="true">Fração</button>
-            <button data-tipo="pct" aria-pressed="false">Porcentagem</button>
-          </div>
-        </div>
-        <div>
-          <div class="field-label">Operação
-            <span class="tip" tabindex="0" aria-label="Adicionar aumenta a pena; subtrair reduz."><span class="tipbox"><strong>Operação</strong><b>Adicionar:</b> aumenta a pena (ex.: acréscimo).<br><b>Subtrair:</b> reduz a pena (ex.: benefício, detração).</span></span>
-          </div>
-          <div class="seg ops" id="segOp">
-            <button data-op="add" aria-pressed="true">＋ Adicionar</button>
-            <button data-op="sub" aria-pressed="false">－ Subtrair</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- frações -->
-      <div id="paneFracao" style="margin-top:6px">
-        <div class="field-label">Fração da pena
-          <span class="tip" tabindex="0" aria-label="Frações usuais no cálculo penal."><span class="tipbox"><strong>Fração da pena</strong>Parcelas usuais: <b>1/6</b> (progressão de regime), <b>1/3, 1/2, 2/3</b> (livramento condicional / progressão, conforme o caso). Use <b>outra…</b> para uma fração livre.</span></span>
-        </div>
-        <div class="chips" id="chipsFrac">
-          <button class="chip" data-num="1" data-den="6" aria-pressed="true">1/6</button>
-          <button class="chip" data-num="1" data-den="5" aria-pressed="false">1/5</button>
-          <button class="chip" data-num="1" data-den="4" aria-pressed="false">1/4</button>
-          <button class="chip" data-num="1" data-den="3" aria-pressed="false">1/3</button>
-          <button class="chip" data-num="1" data-den="2" aria-pressed="false">1/2</button>
-          <button class="chip" data-num="2" data-den="3" aria-pressed="false">2/3</button>
-          <button class="chip" id="chipOutra">outra…</button>
-        </div>
-      </div>
-
-      <!-- porcentagem -->
-      <div id="panePct" style="margin-top:6px;display:none">
-        <div class="field-label">Porcentagem da pena
-          <span class="tip" tabindex="0" aria-label="Informe a parcela como percentual, por exemplo 25%."><span class="tipbox"><strong>Porcentagem</strong>Informe a parcela como percentual da pena.<br>Ex.: <b>25%</b> equivale a <b>1/4</b>.</span></span>
-        </div>
-        <div style="display:flex;align-items:center;gap:10px;max-width:200px">
-          <input type="number" id="pctVal" min="0" max="100" step="0.01" value="16.6667" aria-label="porcentagem">
-          <span style="font-weight:700;font-size:18px">%</span>
-        </div>
-      </div>
-
-      <!-- resultado -->
-      <div class="display result" id="resDisplay" style="margin-top:18px">
-        <div class="amd" id="resAmd">—</div>
-        <div class="dias" id="resDias"></div>
-      </div>
-
-      <div class="calc-lines" id="breakdown"></div>
-      <div class="alert" id="alertLimite">⚠️ O resultado ultrapassou o limite da calculadora (1000 anos).</div>
-
-      <div style="margin-top:16px">
-        <button class="btn primary" id="btUsarResultado">↑ Usar resultado como nova pena base</button>
-      </div>
+  <!-- ============ DADOS GERAIS ============ -->
+  <div class="card" style="margin-bottom:20px">
+    <div class="card-head">
+      <h2>Dados gerais</h2>
+      <span class="tip" tabindex="0" aria-label="Dados fora das condenações: datas base, interrupção e remidos."><span class="tipbox"><strong>Dados gerais</strong>Valores que não pertencem a uma condenação específica: <b>datas base</b> de cada módulo, <b>tempo de interrupção</b> e <b>saldo de dias remidos</b>.</span></span>
     </div>
 
-    <!-- ============ CARD B: TÉRMINO E PROGRESSÃO ============ -->
-    <div class="card">
-      <div class="card-head">
-        <h2>Término e progressão</h2>
-        <span class="tip" tabindex="0" aria-label="Projeta a data de término e as datas de cada fração."><span class="tipbox"><strong>Término e progressão</strong>Projeta a <b>data de término</b> do cumprimento e as datas em que cada fração da pena é atingida (progressão, livramento etc.).</span></span>
+    <div class="gen-grid">
+      <div class="fg">
+        <div class="field-label">Data base — Progressão
+          <span class="tip" tabindex="0" aria-label="Data a partir da qual se conta o requisito da progressão."><span class="tipbox"><strong>Data base · Progressão</strong>Marco a partir do qual se conta o requisito temporal da <b>progressão de regime</b>.</span></span>
+        </div>
+        <input type="date" id="baseProg">
       </div>
-
-      <div style="margin-bottom:16px">
+      <div class="fg">
+        <div class="field-label">Data base — Livramento
+          <span class="tip" tabindex="0" aria-label="Data a partir da qual se conta o requisito do livramento."><span class="tipbox"><strong>Data base · Livramento</strong>Marco a partir do qual se conta o requisito temporal do <b>livramento condicional</b>.</span></span>
+        </div>
+        <input type="date" id="baseLiv">
+      </div>
+      <div class="fg">
         <div class="field-label">Início do cumprimento
-          <span class="tip" tabindex="0" aria-label="Data em que a pena começou. Conta-se o dia do começo (art. 10 CP)."><span class="tipbox"><strong>Início do cumprimento</strong>Data em que a pena começou a ser cumprida. <b>Conta-se o dia do começo</b> (art.&nbsp;10 do Código Penal).</span></span>
+          <span class="tip" tabindex="0" aria-label="Data em que a pena começou. Base do término."><span class="tipbox"><strong>Início do cumprimento</strong>Data em que a pena começou a ser cumprida — base do <b>término de pena</b>. Conta-se o dia do começo (art.&nbsp;10 do CP).</span></span>
         </div>
-        <input type="date" id="t2Inicio" style="max-width:200px">
+        <input type="date" id="baseTerm">
       </div>
-
-      <div>
-        <div class="field-label">Tempo de interrupção
-          <span class="tip" tabindex="0" aria-label="Período em que a execução ficou suspensa. Estende o término."><span class="tipbox"><strong>Tempo de interrupção</strong>Período em que a execução ficou <b>suspensa ou interrompida</b> (ex.: fuga). <b>Estende</b> a data de término.</span></span>
+      <div class="fg">
+        <div class="field-label">Saldo de dias remidos
+          <span class="tip" tabindex="0" aria-label="Dias remidos por trabalho ou estudo, abatidos do término."><span class="tipbox"><strong>Saldo de dias remidos</strong>Dias abatidos por <b>trabalho ou estudo</b> (art.&nbsp;126 da LEP). Reduzem o término da pena.</span></span>
         </div>
-        <div class="led-row">
-          <div class="led-field sm">
-            <div class="cap">Anos</div>
-            <div class="led-input">
-              <input type="number" id="t2iA" min="0" max="999" value="0" aria-label="anos de interrupção">
-              <div class="steppers"><button type="button" data-step="t2iA" data-dir="1" aria-label="mais">▲</button><button type="button" data-step="t2iA" data-dir="-1" aria-label="menos">▼</button></div>
-            </div>
-          </div>
-          <div class="led-field sm">
-            <div class="cap">Meses</div>
-            <div class="led-input">
-              <input type="number" id="t2iM" min="0" max="11" value="0" aria-label="meses de interrupção">
-              <div class="steppers"><button type="button" data-step="t2iM" data-dir="1" aria-label="mais">▲</button><button type="button" data-step="t2iM" data-dir="-1" aria-label="menos">▼</button></div>
-            </div>
-          </div>
-          <div class="led-field sm">
-            <div class="cap">Dias</div>
-            <div class="led-input">
-              <input type="number" id="t2iD" min="0" max="29" value="0" aria-label="dias de interrupção">
-              <div class="steppers"><button type="button" data-step="t2iD" data-dir="1" aria-label="mais">▲</button><button type="button" data-step="t2iD" data-dir="-1" aria-label="menos">▼</button></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div style="margin:4px 0 6px"><button class="linkbtn" id="btPeriodo">↔ calcular período entre duas datas</button></div>
-
-      <div class="display" style="margin-top:6px">
-        <div style="font:600 12px/1 var(--font-sans);text-transform:uppercase;letter-spacing:.06em;color:var(--disp-dim)">Término da pena</div>
-        <div class="amd" id="t2Termino" style="font-size:clamp(20px,3.5vw,26px)">00/00/0000</div>
-      </div>
-
-      <div class="tbl-scroll">
-        <table>
-          <thead><tr><th>Fração</th><th>Tempo (a · m · d)</th><th>Atingida em</th></tr></thead>
-          <tbody id="t2Body"></tbody>
-        </table>
+        <input type="number" id="remidos" min="0" max="99999" value="0" aria-label="saldo de dias remidos">
       </div>
     </div>
 
+    <div style="margin-top:16px">
+      <div class="field-label">Total de interrupção
+        <span class="tip" tabindex="0" aria-label="Período em que a execução ficou suspensa. Estende o término."><span class="tipbox"><strong>Total de interrupção</strong>Soma dos períodos em que a execução ficou <b>suspensa ou interrompida</b> (ex.: fuga). <b>Estende</b> o término da pena.</span></span>
+      </div>
+      <div class="amd3" style="max-width:360px">
+        <div class="u"><input type="number" id="intA" min="0" max="999" value="0" aria-label="anos de interrupção"><small>anos</small></div>
+        <div class="u"><input type="number" id="intM" min="0" max="11" value="0" aria-label="meses de interrupção"><small>meses</small></div>
+        <div class="u"><input type="number" id="intD" min="0" max="29" value="0" aria-label="dias de interrupção"><small>dias</small></div>
+      </div>
+    </div>
+
+    <div style="margin-top:14px"><button class="linkbtn" id="btPeriodo">↔ calcular período entre duas datas</button></div>
+  </div>
+
+  <!-- ============ MÓDULOS ============ -->
+  <div class="grid">
+    <div class="card modcard" id="modProg"></div>
+    <div class="card modcard" id="modLiv"></div>
+    <div class="card modcard" id="modTerm"></div>
+  </div>
+
+  <div class="controls-row" style="margin-top:22px;gap:12px 14px">
+    <button class="btn primary" id="btImprimir">🧾 Gerar extrato / relatório</button>
+    <button class="btn wa" id="btWhats"><svg viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px;fill:currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Enviar por WhatsApp</button>
   </div>
 
   <div class="foot">
-    Ferramenta de apoio ao cálculo penal — confira sempre o cálculo oficial da execução penal.
+    Ferramenta de apoio ao cálculo penal — as datas dos requisitos são projeções (data base + requisito).
+    Confira sempre o cálculo oficial da execução penal, que pode divergir pela unificação das penas.
   </div>
 </div>
 
 <!-- ============ MODAIS ============ -->
-<div class="backdrop" id="mdOutra">
-  <div class="modal">
-    <h3>Outra fração</h3>
-    <p class="hint">Indique numerador e denominador da fração desejada.</p>
-    <div class="row" style="font:700 26px/1 var(--font-mono)">
-      <input type="number" id="oNum" min="1" max="99" value="1" style="max-width:80px">
-      <span>/</span>
-      <input type="number" id="oDen" min="1" max="99" value="1" style="max-width:80px">
-    </div>
-    <div class="actions">
-      <button class="btn" id="oCancel">Cancelar</button>
-      <button class="btn primary" id="oOk">Aplicar</button>
-    </div>
-  </div>
-</div>
-
 <div class="backdrop" id="mdPeriodo">
   <div class="modal">
     <h3>Período entre datas</h3>
@@ -642,9 +568,9 @@ textarea:focus{outline:none;border-color:var(--ring);box-shadow:0 0 0 3px color-
       <div class="amd" id="perAmd" style="font-size:26px">0<span class="u">a</span>0<span class="u">m</span>0<span class="u">d</span></div>
     </div>
     <div style="display:flex;flex-direction:column;gap:8px;margin-top:16px">
-      <button class="btn" id="perPena">Usar como pena base</button>
-      <button class="btn" id="perInt">Usar como tempo de interrupção</button>
-      <button class="btn" id="perSoma">Somar ao tempo de interrupção</button>
+      <button class="btn" id="perInt">Usar como total de interrupção</button>
+      <button class="btn" id="perSoma">Somar ao total de interrupção</button>
+      <button class="btn" id="perCopia">Copiar (a m d)</button>
     </div>
     <div class="actions"><button class="btn" id="perFechar">Fechar</button></div>
   </div>
@@ -656,9 +582,10 @@ textarea:focus{outline:none;border-color:var(--ring);box-shadow:0 0 0 3px color-
     <div style="font-family:var(--font-display);font-size:20px;font-weight:600;margin-top:6px">Calculadora de Penas</div>
     <div style="color:var(--muted);font-size:14px">cálculo penal na convenção 30/360</div>
     <div style="margin:14px 0;padding:14px;border:1px solid var(--border);border-radius:12px;font-size:13.5px;line-height:1.6;color:var(--muted);text-align:left">
-      Ferramenta para cálculo de pena: operações de <b>fração</b> ou <b>porcentagem</b>,
-      <b>dias remidos</b>, <b>término</b> do cumprimento e datas de <b>progressão</b>.
-      Convenção penal: 1&nbsp;mês&nbsp;=&nbsp;30&nbsp;dias e 1&nbsp;ano&nbsp;=&nbsp;360&nbsp;dias.
+      Cálculo dos <b>requisitos temporais</b> com múltiplas condenações: <b>progressão de regime</b>
+      <span style="opacity:.8">(pena imposta − cumprida) × fração</span>, <b>livramento condicional</b>
+      <span style="opacity:.8">(pena × fração)</span> e <b>término de pena</b>. As datas são projeções
+      <b>data base + requisito</b>. Convenção: 1&nbsp;mês&nbsp;=&nbsp;30&nbsp;dias, 1&nbsp;ano&nbsp;=&nbsp;360&nbsp;dias.
     </div>
     <div class="actions" style="justify-content:center"><button class="btn primary" id="sbOk">OK</button></div>
   </div>
@@ -696,411 +623,378 @@ textarea:focus{outline:none;border-color:var(--ring);box-shadow:0 0 0 3px color-
 <script>
 "use strict";
 /* =========================================================================
-   REGRAS DE NEGÓCIO — recuperadas por engenharia reversa do Calcpena.exe
-   (Delphi, "Calculadora de penas" v2.1, 2001).
-   Convenção penal (confirmada pelos limites dos campos do programa original):
-        1 mês = 30 dias · 1 ano = 12 meses = 360 dias · limite 1000 anos.
+   CÁLCULO DOS REQUISITOS TEMPORAIS — progressão, livramento e término.
+   Convenção penal: 1 mês = 30 dias · 1 ano = 12 meses = 360 dias.
+   As datas dos requisitos são projeções: data base + requisito − 1
+   (art. 10 do CP: conta-se o dia do começo).
    ========================================================================= */
-const DIAS_MES=30, MESES_ANO=12, DIAS_ANO=360, LIMITE_DIAS=1000*DIAS_ANO;
-const FRACOES=[[1,6],[1,5],[1,4],[1,3],[1,2],[2,3]];
+const DIAS_MES=30, MESES_ANO=12, DIAS_ANO=360;
 const nf=new Intl.NumberFormat('pt-BR');
 const $=id=>document.getElementById(id);
 
-/* ---- conversões pena <-> dias ---- */
-const toDias=(a,m,d)=>a*DIAS_ANO+m*DIAS_MES+d;
+/* ---- conversões a/m/d <-> dias ---- */
+const toDias=(a,m,d)=>(+a||0)*DIAS_ANO+(+m||0)*DIAS_MES+(+d||0);
 function fromDias(D){
   D=Math.max(0,Math.round(D));
   const a=Math.floor(D/DIAS_ANO); let r=D-a*DIAS_ANO;
   const m=Math.floor(r/DIAS_MES); return {a,m,d:r-m*DIAS_MES};
 }
-function amdHTML(D){const {a,m,d}=fromDias(D);return `${a}<span class="u">a</span>${m}<span class="u">m</span>${d}<span class="u">d</span>`;}
-function amdText(D){const {a,m,d}=fromDias(D);return `${a} a · ${m} m · ${d} d`;}
+const amdC   =D=>{const {a,m,d}=fromDias(D);return `${a}a${m}m${d}d`;};            // compacto: 14a8m7d
+const amdText=D=>{const {a,m,d}=fromDias(D);return `${a} a · ${m} m · ${d} d`;};   // legível
+function amdHTMLu(D){const {a,m,d}=fromDias(D);return `${a}<span class="u">a</span>${m}<span class="u">m</span>${d}<span class="u">d</span>`;}
+
+/* ---- frações / percentuais ---- */
+const PRESETS=[[1,6],[1,5],[1,4],[1,3],[2,5],[3,5],[1,2],[2,3],[3,4]];
+function fFator(f){ return f.tipo==='pct' ? Math.max(0,+f.pct||0)/100 : Math.max(1,+f.num||1)/Math.max(1,+f.den||1); }
+function fRot(f){ return f.tipo==='pct' ? `${(+f.pct||0).toLocaleString('pt-BR')}%` : `${f.num}/${f.den}`; }
 
 /* ---- datas (UTC, evita fuso/horário de verão) ---- */
 const addDias=(dt,n)=>new Date(Date.UTC(dt.getUTCFullYear(),dt.getUTCMonth(),dt.getUTCDate())+n*86400000);
+/* projeção penal: soma a pena (a/m/d) na data base pelo calendário e desconta 1 dia
+   (art. 10 do CP — conta-se o dia do começo). É o método do SEEU/Calcpena. */
+function addPena(dt,D){
+  if(!dt||isNaN(dt)) return null;
+  const {a,m,d}=fromDias(D);
+  const base=new Date(Date.UTC(dt.getUTCFullYear()+a, dt.getUTCMonth()+m, dt.getUTCDate()+d));
+  return new Date(base.getTime()-86400000);
+}
 function fmtData(dt){if(!dt||isNaN(dt))return "00/00/0000";
   return String(dt.getUTCDate()).padStart(2,'0')+'/'+String(dt.getUTCMonth()+1).padStart(2,'0')+'/'+dt.getUTCFullYear();}
 function parseData(v){if(!v)return null;const[y,m,d]=v.split('-').map(Number);return new Date(Date.UTC(y,m-1,d));}
 
-/* ---- estado ---- */
-const St={ tipo:'fracao', op:'add', num:1, den:6, pct:100/6 };
-
-const penaBaseDias=()=>toDias(+$('pbAno').value||0, +$('pbMes').value||0, +$('pbDia').value||0);
-const remidosDias=()=>Math.max(0,+$('rem').value||0);
-const antesDaFracao=()=>$('modoRem').checked;
-function fatorK(){ return St.tipo==='pct' ? (Math.max(0,+$('pctVal').value||0)/100) : (St.num/St.den); }
-function rotuloParcela(){ return St.tipo==='pct' ? `${(+$('pctVal').value||0).toLocaleString('pt-BR')}%` : `${St.num}/${St.den}`; }
-
 /* =========================================================================
-   CÁLCULO CENTRAL — operação de adicionar/subtrair uma parcela da pena.
-   antes:  base = P − R ; parcela = ⌊k·base⌋ ; resultado = base ± parcela
-   depois: parcela = ⌊k·P⌋ ; resultado = (P ± parcela) − R
+   ESTADO — lista de condenações
    ========================================================================= */
-function recalcOperacao(){
-  const P=penaBaseDias(), R=remidosDias(), k=fatorK(), add=St.op==='add', antes=antesDaFracao();
-  let parcela, base, resultado, linhas=[];
+const STATE={ conds:[] };
+const condList=$('condList');
 
-  linhas.push({sign:'', cls:'', lbl:'Pena base', tip:'', val:amdText(P)});
+function novaCond(pre){
+  return Object.assign({
+    pi:{a:0,m:0,d:0}, pc:{a:0,m:0,d:0},
+    fp:{tipo:'fracao',num:1,den:6,pct:16.6667},
+    fl:{tipo:'fracao',num:1,den:3,pct:33.3333}
+  }, pre||{});
+}
 
-  if(antes){
-    base=Math.max(0,P-R);
-    if(R>0){
-      linhas.push({sign:'−', cls:'sub', lbl:'Dias remidos', val:`${nf.format(R)} d`});
-      linhas.push({sign:'=', cls:'', lbl:'Pena com remição', val:amdText(base)});
-    }
-    parcela=Math.floor(k*base);
-    resultado = add ? base+parcela : Math.max(0,base-parcela);
-    linhas.push({sign:add?'+':'−', cls:add?'add':'sub', lbl:`Parcela ${rotuloParcela()} da pena com remição`, val:amdText(parcela)});
-  } else {
-    parcela=Math.floor(k*P);
-    linhas.push({sign:add?'+':'−', cls:add?'add':'sub', lbl:`Parcela ${rotuloParcela()} da pena base`, val:amdText(parcela)});
-    let sub = add ? P+parcela : Math.max(0,P-parcela);
-    resultado=sub;
-    if(R>0){
-      linhas.push({sign:'−', cls:'sub', lbl:'Dias remidos', val:`${nf.format(R)} d`});
-      resultado=Math.max(0,sub-R);
-    }
+/* ---- seletor de fração/percentual ---- */
+function fracSelect(ci,campo,f){
+  let sel = f.tipo==='pct' ? 'pct' : 'custom';
+  let opts=PRESETS.map(([n,d])=>{
+    const is=(f.tipo==='fracao' && n==f.num && d==f.den); if(is)sel=`${n}/${d}`;
+    return `<option value="${n}/${d}"${is?' selected':''}>${n}/${d}</option>`;
+  }).join('');
+  opts+=`<option value="custom"${sel==='custom'?' selected':''}>outra fração…</option>`;
+  opts+=`<option value="pct"${sel==='pct'?' selected':''}>percentual…</option>`;
+  return `<div class="frac-ctl" data-ci="${ci}" data-campo="${campo}">
+    <select data-role="preset" aria-label="fração">${opts}</select>
+    <span class="frac-cust"${sel==='custom'?'':' hidden'}><input type="number" min="1" max="99" data-role="num" value="${f.num}" aria-label="numerador"><span>/</span><input type="number" min="1" max="99" data-role="den" value="${f.den}" aria-label="denominador"></span>
+    <span class="frac-pct"${sel==='pct'?'':' hidden'}><input type="number" min="0" max="100" step="0.0001" data-role="pct" value="${f.pct}" aria-label="percentual"><span>%</span></span>
+  </div>`;
+}
+function amd3(ci,campo,v){
+  return `<div class="amd3" data-ci="${ci}" data-campo="${campo}">
+    <div class="u"><input type="number" min="0" max="999" data-role="a" value="${v.a}" aria-label="anos"><small>anos</small></div>
+    <div class="u"><input type="number" min="0" max="11" data-role="m" value="${v.m}" aria-label="meses"><small>meses</small></div>
+    <div class="u"><input type="number" min="0" max="29" data-role="d" value="${v.d}" aria-label="dias"><small>dias</small></div>
+  </div>`;
+}
+function condRender(){
+  condList.innerHTML=STATE.conds.map((c,i)=>`
+    <div class="cond-card" data-ci="${i}">
+      <span class="cond-num">Condenação ${i+1}</span>
+      ${STATE.conds.length>1?`<button class="cond-del" data-del="${i}" title="Remover" aria-label="Remover condenação">✕</button>`:''}
+      <div class="cond-grid">
+        <div><div class="field-label">Pena imposta</div>${amd3(i,'pi',c.pi)}</div>
+        <div><div class="field-label">Pena cumprida</div>${amd3(i,'pc',c.pc)}</div>
+        <div><div class="field-label">Fração — progressão</div>${fracSelect(i,'fp',c.fp)}</div>
+        <div><div class="field-label">Fração — livramento</div>${fracSelect(i,'fl',c.fl)}</div>
+      </div>
+    </div>`).join('');
+  recalc();
+}
+
+/* ---- edição inline (sem re-render, preserva foco) ---- */
+condList.addEventListener('input',e=>{
+  const t=e.target, box=t.closest('[data-ci]'); if(!box) return;
+  const i=+box.dataset.ci, campo=box.dataset.campo, role=t.dataset.role, c=STATE.conds[i];
+  if(!c||!campo||!role) return;
+  if(campo==='pi'||campo==='pc'){ c[campo][role]=Math.max(0,+t.value||0); }
+  else{
+    if(role==='num') c[campo].num=Math.max(1,+t.value||1);
+    else if(role==='den') c[campo].den=Math.max(1,+t.value||1);
+    else if(role==='pct') c[campo].pct=Math.max(0,+t.value||0);
   }
-
-  // limite
-  const estourou = resultado>LIMITE_DIAS;
-  $('alertLimite').classList.toggle('show',estourou);
-  if(estourou) resultado=LIMITE_DIAS;
-
-  linhas.push({sign:'=', cls:'total', lbl:'Resultado', val:amdText(resultado), total:true});
-
-  // display
-  const disp=$('resDisplay');
-  disp.classList.toggle('sub', !add);
-  $('resAmd').innerHTML=amdHTML(resultado);
-  $('resDias').textContent='= '+nf.format(Math.round(resultado))+' dias';
-
-  // breakdown
-  const box=$('breakdown'); box.innerHTML='';
-  for(const l of linhas){
-    const row=document.createElement('div');
-    row.className='cline '+(l.total?'total ':'')+(l.cls||'');
-    row.innerHTML=`<span class="op-sign">${l.sign||''}</span><span class="lbl">${l.lbl}</span><span class="val">${l.val}</span>`;
-    box.appendChild(row);
-  }
-  window.__res=resultado;
-  window.__op={linhas:linhas.slice(), resultado, add, rotulo:rotuloParcela()};
-}
-
-/* =========================================================================
-   TÉRMINO E PROGRESSÃO
-   término: início + (P − R + I) − 1
-   fração:  antes  → ⌊f·(P−R)⌋ ;  depois → ⌊f·P⌋ − R ;  data = início + marco + I − 1
-   ========================================================================= */
-function recalcTermino(){
-  const inicio=parseData($('t2Inicio').value);
-  const P=penaBaseDias(), R=remidosDias(), antes=antesDaFracao();
-  const I=toDias(+$('t2iA').value||0, +$('t2iM').value||0, +$('t2iD').value||0);
-  const temPena=P>0;
-  const totTermino=Math.max(0,P-R+I);
-  $('t2Termino').textContent=(inicio&&temPena)?fmtData(addDias(inicio,totTermino-1)):"00/00/0000";
-
-  const tb=$('t2Body'); tb.innerHTML=''; const linhas=[];
-  for(const [n,d] of FRACOES){
-    let marco = antes ? Math.floor(Math.max(0,P-R)*n/d) : Math.max(0,Math.floor(P*n/d)-R);
-    const data=(inicio&&temPena)?fmtData(addDias(inicio,marco+I-1)):"00/00/0000";
-    linhas.push({frac:`${n}/${d}`,tempo:amdText(marco),data});
-    const tr=document.createElement('tr');
-    tr.innerHTML=`<td class="frac">${n}/${d}</td><td class="mono">${amdText(marco)}</td><td class="mono">${data}</td>`;
-    tb.appendChild(tr);
-  }
-  window.__termino={P,R,I,inicio,antes,totTermino,linhas};
-  updLeds();
-}
-
-/* ---- pisca dos displays LED: zeros piscam como calculadora ---- */
-function updLeds(){
-  document.querySelectorAll('.led-field input').forEach(inp=>{
-    inp.classList.toggle('led-zero', (parseInt(inp.value,10)||0)===0);
-  });
-}
-function flashLed(inp){
-  const panel=inp.closest('.led-field'); if(!panel) return;
-  panel.classList.remove('flash'); void panel.offsetWidth; panel.classList.add('flash');
-}
-
-/* ---- atualização geral ---- */
-function refresh(){
-  $('pbDias').textContent=nf.format(penaBaseDias())+' dias';
-  recalcOperacao();
-  recalcTermino();
-  updLeds();
-}
-
-/* steppers ▲▼ dos painéis LED: ajusta o campo e dispara o recálculo */
-document.addEventListener('click',e=>{
-  const b=e.target.closest('[data-step]'); if(!b) return;
-  const inp=$(b.dataset.step); const dir=+b.dataset.dir;
-  let v=(+inp.value||0)+dir;
-  if(inp.min!=='') v=Math.max(+inp.min, v);
-  if(inp.max!=='') v=Math.min(+inp.max, v);
-  inp.value=v;
-  inp.dispatchEvent(new Event('input',{bubbles:true}));
+  recalc();
 });
+condList.addEventListener('change',e=>{
+  const t=e.target; if(t.dataset.role!=='preset') return;
+  const box=t.closest('.frac-ctl'), i=+box.dataset.ci, campo=box.dataset.campo, c=STATE.conds[i];
+  const cust=box.querySelector('.frac-cust'), pct=box.querySelector('.frac-pct');
+  if(t.value==='custom'){ c[campo].tipo='fracao'; cust.hidden=false; pct.hidden=true; }
+  else if(t.value==='pct'){ c[campo].tipo='pct'; cust.hidden=true; pct.hidden=false; }
+  else{ const[n,d]=t.value.split('/').map(Number); c[campo].tipo='fracao'; c[campo].num=n; c[campo].den=d; cust.hidden=true; pct.hidden=true; }
+  recalc();
+});
+condList.addEventListener('click',e=>{
+  const del=e.target.closest('[data-del]'); if(!del) return;
+  STATE.conds.splice(+del.dataset.del,1);
+  if(!STATE.conds.length) STATE.conds.push(novaCond());
+  condRender();
+});
+$('condAdd').addEventListener('click',()=>{ STATE.conds.push(novaCond()); condRender(); });
+
+/* =========================================================================
+   CÁLCULO DOS REQUISITOS
+   progressão:  Σ ⌊(PI − PC) × fração⌋
+   livramento:  Σ ⌊PI × fração⌋
+   término:     início + (ΣPI − remidos + interrupção) − 1
+   ========================================================================= */
+function calcAll(){
+  const conds=STATE.conds.map(c=>{
+    const PI=toDias(c.pi.a,c.pi.m,c.pi.d);
+    const PC=toDias(c.pc.a,c.pc.m,c.pc.d);
+    const REST=Math.max(0,PI-PC);
+    return { PI, PC, REST, fpRot:fRot(c.fp), flRot:fRot(c.fl),
+      reqProg:Math.floor(REST*fFator(c.fp)),
+      reqLiv :Math.floor(PI  *fFator(c.fl)) };
+  });
+  const somaPI =conds.reduce((s,c)=>s+c.PI,0);
+  const somaPC =conds.reduce((s,c)=>s+c.PC,0);
+  const reqProg=conds.reduce((s,c)=>s+c.reqProg,0);
+  const reqLiv =conds.reduce((s,c)=>s+c.reqLiv,0);
+
+  const remidos=Math.max(0,+$('remidos').value||0);
+  const interr =toDias(+$('intA').value||0,+$('intM').value||0,+$('intD').value||0);
+
+  // remição conta para todos os benefícios (art. 128 da LEP): abate de cada requisito
+  const saldoProg   =Math.max(0, reqProg - remidos);
+  const saldoLiv    =Math.max(0, reqLiv  - remidos);
+  const saldoTermino=Math.max(0, somaPI  - remidos + interr);
+
+  const baseProg=parseData($('baseProg').value);
+  const baseLiv =parseData($('baseLiv').value);
+  const baseTerm=parseData($('baseTerm').value);
+
+  return { conds, somaPI, somaPC, reqProg, reqLiv, remidos, interr,
+    saldoProg, saldoLiv, saldoTermino,
+    baseProg, baseLiv, baseTerm,
+    dataProg: baseProg && saldoProg>0 ? addPena(baseProg, saldoProg) : null,
+    dataLiv : baseLiv  && saldoLiv >0 ? addPena(baseLiv,  saldoLiv ) : null,
+    dataTerm: baseTerm && saldoTermino>0 ? addPena(baseTerm, saldoTermino) : null };
+}
+
+/* =========================================================================
+   RENDER DOS MÓDULOS
+   ========================================================================= */
+const reqDate=(lbl,dt)=>`<div class="reqdate"><span class="lbl">${lbl}</span><span class="val">${dt?fmtData(dt):'00/00/0000'}</span></div>`;
+
+function renderModProg(R){
+  const flines=R.conds.map(c=>
+    `<div class="fline"><span class="fl-tag">Fração ${c.fpRot}:</span> (${amdC(c.PI)} − ${amdC(c.PC)}) × ${c.fpRot} = ${amdC(c.REST)} × ${c.fpRot} = <b>${amdC(c.reqProg)}</b></div>`
+  ).join('') || '<div class="fline empty">Inclua ao menos uma condenação.</div>';
+  $('modProg').innerHTML=`
+    <div class="card-head"><h2>Progressão de Regime</h2>
+      <span class="tip" tabindex="0" aria-label="Requisito: (pena imposta − cumprida) × fração, por condenação."><span class="tipbox"><strong>Progressão de Regime</strong>Para cada condenação: <b>(pena imposta − pena cumprida) × fração</b>. O requisito total é a soma; a data é <b>data base + requisito</b>.</span></span>
+      <span class="badge">requisito temporal</span></div>
+    <div class="mod-base">Data base: <b>${R.baseProg?fmtData(R.baseProg):'—'}</b></div>
+    <div class="formula-note">(Pena Imposta − Pena Cumprida) × Fração = Pena Restante × Fração</div>
+    <div class="flines">${flines}</div>
+    <div class="req-total"><span class="k">Requisito total (soma)</span><span class="v">${amdC(R.reqProg)} · ${nf.format(R.reqProg)} dias</span></div>
+    ${R.remidos>0?`<div class="mini-extrato"><div class="l"><span>− Saldo de dias remidos</span><b>${nf.format(R.remidos)} dias</b></div><div class="l"><span>Saldo a cumprir</span><b>${amdC(R.saldoProg)} · ${nf.format(R.saldoProg)} dias</b></div></div>`:''}
+    ${reqDate('Data do Requisito Temporal', R.dataProg)}`;
+}
+function renderModLiv(R){
+  const parts=R.conds.map(c=>`${amdC(c.PI)} × ${c.flRot}`).join(' + ');
+  const soma =R.conds.length ? `${parts} = <b>${amdC(R.reqLiv)}</b>` : '—';
+  $('modLiv').innerHTML=`
+    <div class="card-head"><h2>Livramento Condicional</h2>
+      <span class="tip" tabindex="0" aria-label="Requisito: pena imposta × fração, somando as condenações."><span class="tipbox"><strong>Livramento Condicional</strong>Soma, por condenação, de <b>pena imposta × fração</b>. A data é <b>data base + requisito</b>.</span></span>
+      <span class="badge">requisito temporal</span></div>
+    <div class="mod-base">Data base: <b>${R.baseLiv?fmtData(R.baseLiv):'—'}</b></div>
+    <div class="formula-note">Σ (Pena Imposta × Fração)</div>
+    <div class="flines"><div class="fline"><span class="fl-tag">Condicional:</span> ${soma}</div></div>
+    <div class="req-total"><span class="k">Requisito total</span><span class="v">${amdC(R.reqLiv)} · ${nf.format(R.reqLiv)} dias</span></div>
+    ${R.remidos>0?`<div class="mini-extrato"><div class="l"><span>− Saldo de dias remidos</span><b>${nf.format(R.remidos)} dias</b></div><div class="l"><span>Saldo a cumprir</span><b>${amdC(R.saldoLiv)} · ${nf.format(R.saldoLiv)} dias</b></div></div>`:''}
+    ${reqDate('Data do Requisito Temporal', R.dataLiv)}`;
+}
+function renderModTerm(R){
+  $('modTerm').innerHTML=`
+    <div class="card-head"><h2>Término de Pena</h2>
+      <span class="tip" tabindex="0" aria-label="Término: início + pena total − remidos + interrupção."><span class="tipbox"><strong>Término de Pena</strong>Início do cumprimento <b>+ pena total − remidos + interrupção</b>. Conta-se o dia do começo (art.&nbsp;10 do CP).</span></span>
+      <span class="badge">requisito temporal</span></div>
+    <div class="mod-base">Início do cumprimento: <b>${R.baseTerm?fmtData(R.baseTerm):'—'}</b></div>
+    <div class="mini-extrato">
+      <div class="l"><span>Pena total (soma das condenações)</span><b>${amdC(R.somaPI)}</b></div>
+      <div class="l"><span>Total de interrupção</span><b>${amdC(R.interr)}</b></div>
+      <div class="l"><span>Saldo de dias remidos</span><b>− ${nf.format(R.remidos)} dias</b></div>
+      <div class="l"><span>Saldo a cumprir</span><b>${amdC(R.saldoTermino)} · ${nf.format(R.saldoTermino)} dias</b></div>
+    </div>
+    <div style="margin-top:12px">${reqDate('Data do Requisito Temporal', R.dataTerm)}</div>`;
+}
+
+let LAST=null;
+function recalc(){
+  const R=calcAll(); LAST=R;
+  renderModProg(R); renderModLiv(R); renderModTerm(R);
+  bindTips();
+}
 
 /* =========================================================================
    PERÍODO ENTRE DATAS (diferença inclusiva → a/m/d)
    ========================================================================= */
 function calcPeriodo(){
   const d1=parseData($('perD1').value), d2=parseData($('perD2').value);
-  let dias=0;
-  if(d1&&d2){ dias=Math.round((d2-d1)/86400000)+1; if(dias<0)dias=0; }
-  $('perAmd').innerHTML=amdHTML(dias);
+  let dias=0; if(d1&&d2){ dias=Math.round((d2-d1)/86400000)+1; if(dias<0)dias=0; }
+  $('perAmd').innerHTML=amdHTMLu(dias);
   return dias;
 }
-
-/* ============ LIGAÇÕES ============ */
-// pena base + remição
-['pbAno','pbMes','pbDia','rem'].forEach(id=>$(id).addEventListener('input',refresh));
-$('modoRem').addEventListener('change',refresh);
-
-// tipo fração/porcentagem
-$('segTipo').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
-  St.tipo=b.dataset.tipo;
-  [...e.currentTarget.children].forEach(x=>x.setAttribute('aria-pressed',x===b));
-  $('paneFracao').style.display=St.tipo==='fracao'?'':'none';
-  $('panePct').style.display=St.tipo==='pct'?'':'none';
-  recalcOperacao();
-});
-// operação add/sub
-$('segOp').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
-  St.op=b.dataset.op;
-  [...e.currentTarget.children].forEach(x=>x.setAttribute('aria-pressed',x===b));
-  recalcOperacao();
-});
-// chips de fração
-$('chipsFrac').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b||b.id==='chipOutra')return;
-  St.num=+b.dataset.num; St.den=+b.dataset.den;
-  document.querySelectorAll('#chipsFrac .chip').forEach(x=>x.setAttribute('aria-pressed', x===b));
-  recalcOperacao();
-});
-$('pctVal').addEventListener('input',recalcOperacao);
-
-// outra fração (modal)
-$('chipOutra').addEventListener('click',()=>{$('oNum').value=St.num;$('oDen').value=St.den;$('mdOutra').classList.add('show');});
-$('oCancel').addEventListener('click',()=>$('mdOutra').classList.remove('show'));
-$('oOk').addEventListener('click',()=>{
-  St.num=Math.max(1,+$('oNum').value||1); St.den=Math.max(1,+$('oDen').value||1);
-  document.querySelectorAll('#chipsFrac .chip[data-num]').forEach(x=>x.setAttribute('aria-pressed','false'));
-  $('chipOutra').setAttribute('aria-pressed','true'); $('chipOutra').textContent=`${St.num}/${St.den}`;
-  $('mdOutra').classList.remove('show'); recalcOperacao();
-});
-
-// usar resultado como nova pena base
-$('btUsarResultado').addEventListener('click',()=>{
-  const {a,m,d}=fromDias(window.__res||0);
-  $('pbAno').value=a; $('pbMes').value=m; $('pbDia').value=d; refresh();
-});
-
-// memória (MR / MC / M+ / M−) — opera sobre a pena base
-let mem=0;
-function updMem(){
-  const e=$('memVal');
-  if(mem>0){ e.textContent=amdText(mem)+'  ('+nf.format(mem)+' d)'; e.classList.remove('empty'); }
-  else { e.textContent='vazia'; e.classList.add('empty'); }
-}
-$('btMmais').addEventListener('click',()=>{ mem+=penaBaseDias(); updMem(); });
-$('btMmenos').addEventListener('click',()=>{ mem=Math.max(0,mem-penaBaseDias()); updMem(); });
-$('btMC').addEventListener('click',()=>{ mem=0; updMem(); });
-$('btMR').addEventListener('click',()=>{ const{a,m,d}=fromDias(mem); $('pbAno').value=a;$('pbMes').value=m;$('pbDia').value=d; refresh(); });
-updMem();
-
-// término
-['t2Inicio','t2iA','t2iM','t2iD'].forEach(id=>$(id).addEventListener('input',recalcTermino));
-
-// período (modal)
 $('btPeriodo').addEventListener('click',()=>{$('mdPeriodo').classList.add('show');calcPeriodo();});
 $('perD1').addEventListener('input',calcPeriodo);
 $('perD2').addEventListener('input',calcPeriodo);
 $('perFechar').addEventListener('click',()=>$('mdPeriodo').classList.remove('show'));
-$('perPena').addEventListener('click',()=>{const{a,m,d}=fromDias(calcPeriodo());$('pbAno').value=a;$('pbMes').value=m;$('pbDia').value=d;$('mdPeriodo').classList.remove('show');refresh();});
-$('perInt').addEventListener('click',()=>{const{a,m,d}=fromDias(calcPeriodo());$('t2iA').value=a;$('t2iM').value=m;$('t2iD').value=d;$('mdPeriodo').classList.remove('show');recalcTermino();});
-$('perSoma').addEventListener('click',()=>{const at=toDias(+$('t2iA').value||0,+$('t2iM').value||0,+$('t2iD').value||0);const{a,m,d}=fromDias(at+calcPeriodo());$('t2iA').value=a;$('t2iM').value=m;$('t2iD').value=d;$('mdPeriodo').classList.remove('show');recalcTermino();});
+$('perInt').addEventListener('click',()=>{const{a,m,d}=fromDias(calcPeriodo());$('intA').value=a;$('intM').value=m;$('intD').value=d;$('mdPeriodo').classList.remove('show');recalc();});
+$('perSoma').addEventListener('click',()=>{const at=toDias(+$('intA').value||0,+$('intM').value||0,+$('intD').value||0);const{a,m,d}=fromDias(at+calcPeriodo());$('intA').value=a;$('intM').value=m;$('intD').value=d;$('mdPeriodo').classList.remove('show');recalc();});
+$('perCopia').addEventListener('click',async()=>{const{a,m,d}=fromDias(calcPeriodo());try{await navigator.clipboard.writeText(`${a}a${m}m${d}d`);$('perCopia').textContent='Copiado!';setTimeout(()=>$('perCopia').textContent='Copiar (a m d)',1400);}catch(e){}});
 
-// sobre
+/* ---- dados gerais → recalcular ---- */
+['baseProg','baseLiv','baseTerm','remidos','intA','intM','intD'].forEach(id=>$(id).addEventListener('input',recalc));
+
+/* ---- sobre / tema ---- */
 $('btSobre').addEventListener('click',()=>$('mdSobre').classList.add('show'));
 $('sbOk').addEventListener('click',()=>$('mdSobre').classList.remove('show'));
-
-// ===== enviar resumo por WhatsApp =====
-function resumoTexto(){
-  const t=window.__termino||{}, op=window.__op||{linhas:[]};
-  const P=t.P||0, R=t.R||0, I=t.I||0, inicio=t.inicio;
-  const termino=(inicio&&P>0)?fmtData(addDias(inicio,(t.totTermino||1)-1)):'—';
-  const L=[];
-  L.push('*Calculadora de Penas*'); L.push('');
-  L.push(`*Pena base:* ${amdText(P)} (${nf.format(P)} dias)`);
-  if(R>0) L.push(`*Dias remidos:* ${nf.format(R)}`);
-  L.push(`*Início:* ${inicio?fmtData(inicio):'—'}`);
-  if(I>0) L.push(`*Interrupção:* ${amdText(I)}`);
-  L.push(`*Término da pena:* ${termino}`);
-  if(op.linhas&&op.linhas.length){
-    L.push(''); L.push(`*Operação:* ${(op.add?'Adição':'Subtração')}${op.rotulo?' de '+op.rotulo:''}`);
-    op.linhas.forEach(l=>L.push(`${l.sign?l.sign+' ':''}${l.lbl}: ${l.val}`));
-  }
-  if(t.linhas&&t.linhas.length){
-    L.push(''); L.push('*Progressão da pena:*');
-    t.linhas.forEach(l=>L.push(`${l.frac} → ${l.tempo} — ${l.data}`));
-  }
-  L.push(''); L.push('_Ferramenta de apoio — confira sempre o cálculo oficial da execução penal._');
-  return L.join('\n');
-}
-const soDigitos=s=>(s||'').replace(/\D/g,'');
-function atualizaLinkWa(){
-  const ddi=soDigitos($('waDDI').value)||'55';
-  const num=soDigitos($('waNum').value);
-  const full=ddi+num;
-  const a=$('waSend');
-  if(num.length>=10){
-    a.href=`https://wa.me/${full}?text=${encodeURIComponent($('waMsg').value)}`;
-    a.classList.remove('disabled');
-  } else { a.href='javascript:void(0)'; a.classList.add('disabled'); }
-}
-function carregaRecentes(){
-  try{ const arr=JSON.parse(localStorage.getItem('cp_wa_recent')||'[]');
-    $('waRecent').innerHTML=arr.map(n=>`<option value="${n}"></option>`).join('');
-  }catch(e){}
-}
-function salvaRecente(num){
-  try{ let arr=JSON.parse(localStorage.getItem('cp_wa_recent')||'[]');
-    arr=[num,...arr.filter(x=>x!==num)].slice(0,6);
-    localStorage.setItem('cp_wa_recent',JSON.stringify(arr)); carregaRecentes();
-  }catch(e){}
-}
-$('btWhats').addEventListener('click',()=>{
-  refresh();
-  $('waMsg').value=resumoTexto();
-  carregaRecentes(); atualizaLinkWa();
-  $('mdWhats').classList.add('show');
-});
-['waDDI','waNum','waMsg'].forEach(id=>$(id).addEventListener('input',atualizaLinkWa));
-$('waCancel').addEventListener('click',()=>$('mdWhats').classList.remove('show'));
-$('waSend').addEventListener('click',()=>{
-  if($('waSend').classList.contains('disabled')) return;
-  salvaRecente(soDigitos($('waNum').value));
-  $('mdWhats').classList.remove('show');
-});
-$('waCopy').addEventListener('click',async()=>{
-  try{ await navigator.clipboard.writeText($('waMsg').value); $('waCopy').textContent='Copiado!'; setTimeout(()=>$('waCopy').textContent='Copiar',1500); }
-  catch(e){ $('waMsg').focus(); $('waMsg').select(); }
-});
-
-// fecha modal ao clicar no fundo / Esc
-document.querySelectorAll('.backdrop').forEach(bd=>bd.addEventListener('click',e=>{if(e.target===bd)bd.classList.remove('show');}));
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){
-  document.querySelectorAll('.backdrop.show').forEach(b=>b.classList.remove('show'));
-  document.querySelectorAll('.tip.open').forEach(t=>t.classList.remove('open'));
-}});
-
-// tooltips: reposiciona para nunca cortar na borda da tela + abre no toque (mobile)
-function positionTip(tip){
-  const box=tip.querySelector('.tipbox'); if(!box) return;
-  box.style.setProperty('--sx','0px');
-  const r=box.getBoundingClientRect(), m=10;
-  let shift=0;
-  if(r.left<m) shift=m-r.left;
-  else if(r.right>window.innerWidth-m) shift=(window.innerWidth-m)-r.right;
-  if(shift) box.style.setProperty('--sx',Math.round(shift)+'px');
-}
-document.querySelectorAll('.tip').forEach(tip=>{
-  tip.addEventListener('mouseenter',()=>positionTip(tip));
-  tip.addEventListener('focus',()=>positionTip(tip));
-  tip.addEventListener('click',()=>{
-    const open=tip.classList.contains('open');
-    document.querySelectorAll('.tip.open').forEach(t=>{if(t!==tip)t.classList.remove('open');});
-    tip.classList.toggle('open',!open);
-    if(!open) positionTip(tip);
-  });
-});
-document.addEventListener('click',e=>{ if(!e.target.closest('.tip')) document.querySelectorAll('.tip.open').forEach(t=>t.classList.remove('open')); });
-window.addEventListener('resize',()=>document.querySelectorAll('.tip.open').forEach(positionTip));
-window.addEventListener('scroll',()=>document.querySelectorAll('.tip.open').forEach(positionTip),{passive:true});
-
-// tema
 $('btTema').addEventListener('click',()=>{
   const cur=document.documentElement.getAttribute('data-theme');
   const dark=cur? cur==='dark' : matchMedia('(prefers-color-scheme:dark)').matches;
   document.documentElement.setAttribute('data-theme', dark?'light':'dark');
 });
 
-// imprimir — monta um relatório visual e abre o preview (com botão imprimir/salvar PDF)
-function agoraStr(){
-  const d=new Date(), p=n=>String(n).padStart(2,'0');
-  return `${p(d.getDate())}/${p(d.getMonth()+1)}/${d.getFullYear()} às ${p(d.getHours())}:${p(d.getMinutes())}`;
-}
+/* =========================================================================
+   RELATÓRIO / EXTRATO
+   ========================================================================= */
+function agoraStr(){ const d=new Date(), p=n=>String(n).padStart(2,'0');
+  return `${p(d.getDate())}/${p(d.getMonth()+1)}/${d.getFullYear()} às ${p(d.getHours())}:${p(d.getMinutes())}`; }
+
 function montarRelatorio(){
-  const t=window.__termino||{}, op=window.__op||{linhas:[]};
-  const P=t.P||0, R=t.R||0, I=t.I||0, inicio=t.inicio, antes=t.antes;
-  const termino=(inicio&&P>0)?fmtData(addDias(inicio,(t.totTermino||1)-1)):'—';
-  const dados=[
-    ['Pena base', `${amdText(P)}  ·  ${nf.format(P)} dias`],
-    ['Dias remidos', R>0?`${nf.format(R)} dias`:'—'],
-    ['Regra da remição', antes?'antes de calcular a fração':'após calcular a fração'],
-    ['Início do cumprimento', inicio?fmtData(inicio):'—'],
-    ['Tempo de interrupção', I>0?amdText(I):'—'],
-    ['Convenção', '1 mês = 30 dias · 1 ano = 360 dias'],
-  ].map(([k,v])=>`<div class="kv"><span class="k">${k}</span><span class="v">${v}</span></div>`).join('');
-  const opLines=(op.linhas||[]).map(l=>{
-    const cls=l.total?'tot':(l.cls||'');
-    return `<div class="op-line ${cls}"><span class="s">${l.sign||''}</span><span>${l.lbl}</span><span class="v">${l.val}</span></div>`;
-  }).join('');
-  const opTitulo=(op.add?'Adição':'Subtração')+(op.rotulo?` de ${op.rotulo}`:'');
-  const rows=(t.linhas||[]).map(l=>`<tr><td class="f">${l.frac}</td><td>${l.tempo}</td><td>${l.data}</td></tr>`).join('');
-  const rodape=antes
-    ? 'Os dias remidos foram descontados da pena <b>antes</b> do cálculo das frações.'
-    : 'Os dias remidos foram descontados da pena <b>após</b> o cálculo das frações.';
+  const R=LAST||calcAll();
+  const condRows=R.conds.map((c,i)=>`<tr><td class="f">${i+1}</td><td>${amdC(c.PI)}</td><td>${amdC(c.PC)}</td><td>${c.fpRot}</td><td>${c.flRot}</td></tr>`).join('');
+  const progLines=R.conds.map(c=>`<div class="op-line"><span>Fração ${c.fpRot}: (${amdC(c.PI)} − ${amdC(c.PC)}) × ${c.fpRot} = ${amdC(c.REST)} × ${c.fpRot}</span><span class="v">${amdC(c.reqProg)}</span></div>`).join('');
+  const livParts=R.conds.map(c=>`${amdC(c.PI)} × ${c.flRot}`).join(' + ');
   return `<div class="report">
     <div class="r-head">
-      <div class="r-title">CALCULADORA <span class="r-accent">DE PENAS</span></div>
-      <div class="r-sub">Relatório de cálculo<br>gerado em ${agoraStr()}</div>
+      <div class="r-title">REQUISITOS <span class="r-accent">TEMPORAIS</span></div>
+      <div class="r-sub">Cálculo dos requisitos temporais<br>gerado em ${agoraStr()}</div>
     </div>
-    <h3>Dados do cálculo</h3>
-    <div class="grid2">${dados}</div>
-    <div class="termo-box"><span class="lbl">Término da pena</span><span class="val">${termino}</span></div>
-    <h3>Operação sobre a pena — ${opTitulo}</h3>
-    ${opLines||'<div class="op-line"><span>—</span></div>'}
-    <h3>Progressão da pena</h3>
-    <div class="tblwrap"><table><thead><tr><th>Fração</th><th>Tempo (a · m · d)</th><th>Atingida em</th></tr></thead><tbody>${rows}</tbody></table></div>
-    <div class="r-foot">${rodape}<br>Ferramenta de apoio ao cálculo penal — confira sempre o cálculo oficial da execução penal.</div>
+
+    <h3>Condenações</h3>
+    <div class="tblwrap"><table><thead><tr><th>#</th><th>Pena imposta</th><th>Pena cumprida</th><th>Fr. prog.</th><th>Fr. livr.</th></tr></thead><tbody>${condRows||'<tr><td colspan="5">—</td></tr>'}</tbody></table></div>
+
+    <h3>Progressão de Regime</h3>
+    <div class="op-line"><span>Data base</span><span class="v">${R.baseProg?fmtData(R.baseProg):'—'}</span></div>
+    ${progLines}
+    <div class="op-line"><span>Requisito total</span><span class="v">${amdC(R.reqProg)}</span></div>
+    ${R.remidos>0?`<div class="op-line sub"><span class="s">−</span><span>Saldo de dias remidos</span><span class="v">${nf.format(R.remidos)} dias</span></div><div class="op-line tot"><span>Saldo a cumprir</span><span class="v">${amdC(R.saldoProg)}</span></div>`:''}
+    <div class="termo-box"><span class="lbl">Data do Requisito Temporal</span><span class="val">${R.dataProg?fmtData(R.dataProg):'—'}</span></div>
+
+    <h3>Livramento Condicional</h3>
+    <div class="op-line"><span>Data base</span><span class="v">${R.baseLiv?fmtData(R.baseLiv):'—'}</span></div>
+    <div class="op-line"><span>Condicional: ${livParts||'—'}</span><span class="v">${amdC(R.reqLiv)}</span></div>
+    ${R.remidos>0?`<div class="op-line sub"><span class="s">−</span><span>Saldo de dias remidos</span><span class="v">${nf.format(R.remidos)} dias</span></div><div class="op-line tot"><span>Saldo a cumprir</span><span class="v">${amdC(R.saldoLiv)}</span></div>`:''}
+    <div class="termo-box"><span class="lbl">Data do Requisito Temporal</span><span class="val">${R.dataLiv?fmtData(R.dataLiv):'—'}</span></div>
+
+    <h3>Término de Pena</h3>
+    <div class="op-line"><span>Início do cumprimento</span><span class="v">${R.baseTerm?fmtData(R.baseTerm):'—'}</span></div>
+    <div class="op-line"><span>Pena total (soma das condenações)</span><span class="v">${amdC(R.somaPI)}</span></div>
+    <div class="op-line"><span>Total de interrupção</span><span class="v">${amdC(R.interr)}</span></div>
+    <div class="op-line sub"><span class="s">−</span><span>Saldo de dias remidos</span><span class="v">${nf.format(R.remidos)} dias</span></div>
+    <div class="op-line tot"><span>Saldo a cumprir</span><span class="v">${amdC(R.saldoTermino)}</span></div>
+    <div class="termo-box"><span class="lbl">Data do Requisito Temporal</span><span class="val">${R.dataTerm?fmtData(R.dataTerm):'—'}</span></div>
+
+    <div class="r-foot">As datas dos requisitos são projeções <b>data base + requisito</b> (art. 10 do CP: conta-se o dia do começo). Ferramenta de apoio — confira sempre o cálculo oficial da execução penal, que pode divergir pela unificação das penas.</div>
   </div>`;
 }
-$('btImprimir').addEventListener('click',()=>{
-  refresh();
-  $('reportBody').innerHTML=montarRelatorio();
-  $('mdReport').classList.add('show');
-});
+$('btImprimir').addEventListener('click',()=>{ recalc(); $('reportBody').innerHTML=montarRelatorio(); $('mdReport').classList.add('show'); });
 $('rpClose').addEventListener('click',()=>$('mdReport').classList.remove('show'));
 $('rpPrint').addEventListener('click',()=>{ setTimeout(()=>window.print(),50); });
 
-// letreiro jurídico (marquee)
+/* =========================================================================
+   WHATSAPP
+   ========================================================================= */
+function resumoTexto(){
+  const R=LAST||calcAll(); const L=[];
+  L.push('*Requisitos Temporais*'); L.push('');
+  R.conds.forEach((c,i)=>L.push(`*Cond. ${i+1}:* pena ${amdC(c.PI)} · cumprida ${amdC(c.PC)} · prog. ${c.fpRot} · livr. ${c.flRot}`));
+  L.push(''); L.push('*Progressão de Regime*');
+  L.push(`Data base: ${R.baseProg?fmtData(R.baseProg):'—'}`);
+  R.conds.forEach(c=>L.push(`  Fração ${c.fpRot}: (${amdC(c.PI)} − ${amdC(c.PC)}) × ${c.fpRot} = ${amdC(c.reqProg)}`));
+  L.push(`Requisito total: ${amdC(R.reqProg)}`);
+  L.push(`Data do Requisito Temporal: ${R.dataProg?fmtData(R.dataProg):'—'}`);
+  L.push(''); L.push('*Livramento Condicional*');
+  L.push(`Data base: ${R.baseLiv?fmtData(R.baseLiv):'—'}`);
+  L.push(`Condicional: ${R.conds.map(c=>`${amdC(c.PI)} × ${c.flRot}`).join(' + ')} = ${amdC(R.reqLiv)}`);
+  L.push(`Data do Requisito Temporal: ${R.dataLiv?fmtData(R.dataLiv):'—'}`);
+  L.push(''); L.push('*Término de Pena*');
+  L.push(`Início: ${R.baseTerm?fmtData(R.baseTerm):'—'}`);
+  L.push(`Pena total: ${amdC(R.somaPI)} · Interrupção: ${amdC(R.interr)} · Remidos: ${nf.format(R.remidos)} d`);
+  L.push(`Data do Requisito Temporal: ${R.dataTerm?fmtData(R.dataTerm):'—'}`);
+  L.push(''); L.push('_Projeção data base + requisito — confira o cálculo oficial._');
+  return L.join('\n');
+}
+const soDigitos=s=>(s||'').replace(/\D/g,'');
+function atualizaLinkWa(){
+  const ddi=soDigitos($('waDDI').value)||'55', num=soDigitos($('waNum').value), full=ddi+num, a=$('waSend');
+  if(num.length>=10){ a.href=`https://wa.me/${full}?text=${encodeURIComponent($('waMsg').value)}`; a.classList.remove('disabled'); }
+  else{ a.href='javascript:void(0)'; a.classList.add('disabled'); }
+}
+function carregaRecentes(){ try{ const arr=JSON.parse(localStorage.getItem('cp_wa_recent')||'[]'); $('waRecent').innerHTML=arr.map(n=>`<option value="${n}"></option>`).join(''); }catch(e){} }
+function salvaRecente(num){ try{ let arr=JSON.parse(localStorage.getItem('cp_wa_recent')||'[]'); arr=[num,...arr.filter(x=>x!==num)].slice(0,6); localStorage.setItem('cp_wa_recent',JSON.stringify(arr)); carregaRecentes(); }catch(e){} }
+$('btWhats').addEventListener('click',()=>{ recalc(); $('waMsg').value=resumoTexto(); carregaRecentes(); atualizaLinkWa(); $('mdWhats').classList.add('show'); });
+['waDDI','waNum','waMsg'].forEach(id=>$(id).addEventListener('input',atualizaLinkWa));
+$('waCancel').addEventListener('click',()=>$('mdWhats').classList.remove('show'));
+$('waSend').addEventListener('click',()=>{ if($('waSend').classList.contains('disabled'))return; salvaRecente(soDigitos($('waNum').value)); $('mdWhats').classList.remove('show'); });
+$('waCopy').addEventListener('click',async()=>{ try{ await navigator.clipboard.writeText($('waMsg').value); $('waCopy').textContent='Copiado!'; setTimeout(()=>$('waCopy').textContent='Copiar',1500);}catch(e){ $('waMsg').focus(); $('waMsg').select(); } });
+
+/* =========================================================================
+   MODAIS / TOOLTIPS / TICKER
+   ========================================================================= */
+document.querySelectorAll('.backdrop').forEach(bd=>bd.addEventListener('click',e=>{if(e.target===bd)bd.classList.remove('show');}));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){ document.querySelectorAll('.backdrop.show').forEach(b=>b.classList.remove('show')); document.querySelectorAll('.tip.open').forEach(t=>t.classList.remove('open')); }});
+function positionTip(tip){ const box=tip.querySelector('.tipbox'); if(!box)return; box.style.setProperty('--sx','0px'); const r=box.getBoundingClientRect(),m=10; let shift=0; if(r.left<m)shift=m-r.left; else if(r.right>window.innerWidth-m)shift=(window.innerWidth-m)-r.right; if(shift)box.style.setProperty('--sx',Math.round(shift)+'px'); }
+function bindTips(){
+  document.querySelectorAll('.tip').forEach(tip=>{
+    if(tip.__b) return; tip.__b=1;
+    tip.addEventListener('mouseenter',()=>positionTip(tip));
+    tip.addEventListener('focus',()=>positionTip(tip));
+    tip.addEventListener('click',()=>{ const open=tip.classList.contains('open'); document.querySelectorAll('.tip.open').forEach(t=>{if(t!==tip)t.classList.remove('open');}); tip.classList.toggle('open',!open); if(!open)positionTip(tip); });
+  });
+}
+document.addEventListener('click',e=>{ if(!e.target.closest('.tip')) document.querySelectorAll('.tip.open').forEach(t=>t.classList.remove('open')); });
+window.addEventListener('resize',()=>document.querySelectorAll('.tip.open').forEach(positionTip));
+window.addEventListener('scroll',()=>document.querySelectorAll('.tip.open').forEach(positionTip),{passive:true});
+
 const MENSAGENS=[
-  '<b>Art. 10 do CP</b> — conta-se o dia do começo no cômputo da pena.',
+  '<b>Art. 112 da LEP</b> — progressão exige o cumprimento de fração/percentual da pena.',
+  '<b>Art. 83 do CP</b> — livramento condicional após cumprida parte da pena.',
   '<b>Remição</b> — 1 dia de pena a cada 3 dias de trabalho (art. 126 da LEP).',
-  '<b>Detração</b> — abate-se o tempo de prisão provisória (art. 42 do CP).',
+  '<b>Art. 10 do CP</b> — conta-se o dia do começo no cômputo da pena.',
   'Nesta calculadora: <b>1 mês = 30 dias</b> e <b>1 ano = 360 dias</b>.',
-  '<b>Dura lex, sed lex</b> — a lei é dura, mas é a lei.',
   '<b>In dubio pro reo</b> — na dúvida, em favor do réu.',
 ];
-(function(){
-  const sep='<span class="tsep">◆</span>';
-  const bloco=MENSAGENS.map(m=>'<span class="ti">'+m+'</span>'+sep).join('');
-  $('tickerInner').innerHTML=bloco+bloco; // duplicado para loop contínuo
-})();
+(function(){ const sep='<span class="tsep">◆</span>'; const bloco=MENSAGENS.map(m=>'<span class="ti">'+m+'</span>'+sep).join(''); $('tickerInner').innerHTML=bloco+bloco; })();
 
-// flash ao alterar qualquer display LED
-document.querySelectorAll('.led-field input').forEach(inp=>{
-  inp.addEventListener('input',()=>flashLed(inp));
-});
+/* =========================================================================
+   INICIALIZAÇÃO — pré-preenchido com o exemplo do SEEU (para conferência)
+   ========================================================================= */
+$('baseProg').value='2019-12-05';
+$('baseLiv').value ='2019-09-27';
+$('baseTerm').value='2019-12-05';
+$('remidos').value ='1616';
+STATE.conds=[
+  novaCond({ pi:{a:14,m:8,d:7},   pc:{a:0,m:2,d:9}, fp:{tipo:'fracao',num:1,den:6}, fl:{tipo:'fracao',num:1,den:3} }),
+  novaCond({ pi:{a:19,m:10,d:15}, pc:{a:0,m:0,d:0}, fp:{tipo:'fracao',num:2,den:5}, fl:{tipo:'fracao',num:2,den:3} }),
+];
+(function(){const h=new Date();const iso=h.getFullYear()+'-'+String(h.getMonth()+1).padStart(2,'0')+'-'+String(h.getDate()).padStart(2,'0'); $('perD1').value=iso;$('perD2').value=iso;})();
 
-// data inicial = hoje
-(function(){const h=new Date();const iso=h.getFullYear()+'-'+String(h.getMonth()+1).padStart(2,'0')+'-'+String(h.getDate()).padStart(2,'0');
-  $('t2Inicio').value=iso;$('perD1').value=iso;$('perD2').value=iso;})();
-
-refresh();
+condRender();   // dispara recalc(), que já chama bindTips()
 </script>
 </body>
 </html>
